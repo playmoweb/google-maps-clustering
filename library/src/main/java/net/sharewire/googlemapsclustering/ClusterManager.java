@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,21 +54,23 @@ public class ClusterManager<T extends ClusterItem> implements GoogleMap.OnCamera
          * Called when a marker representing a cluster has been clicked.
          *
          * @param cluster the cluster that has been clicked
+         * @param markerItem the marker item of the clicked Item
          * @return <code>true</code> if the listener has consumed the event (i.e., the default behavior should not occur);
          * <code>false</code> otherwise (i.e., the default behavior should occur). The default behavior is for the camera
          * to move to the marker and an info window to appear.
          */
-        boolean onClusterClick(@NonNull Cluster<T> cluster);
+        boolean onClusterClick(@NonNull Cluster<T> cluster, , @NonNull Marker markerItem);
 
         /**
          * Called when a marker representing a cluster item has been clicked.
          *
          * @param clusterItem the cluster item that has been clicked
+         * @param markerItem the marker item of the clicked Item
          * @return <code>true</code> if the listener has consumed the event (i.e., the default behavior should not occur);
          * <code>false</code> otherwise (i.e., the default behavior should occur). The default behavior is for the camera
          * to move to the marker and an info window to appear.
          */
-        boolean onClusterItemClick(@NonNull T clusterItem);
+        boolean onClusterItemClick(@NonNull T clusterItem, @NonNull Marker markerItem);
     }
 
     /**
