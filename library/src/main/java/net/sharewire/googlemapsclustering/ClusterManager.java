@@ -12,6 +12,7 @@ import com.google.android.gms.maps.model.Marker;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -71,6 +72,8 @@ public class ClusterManager<T extends ClusterItem> implements GoogleMap.OnCamera
          * to move to the marker and an info window to appear.
          */
         boolean onClusterItemClick(@NonNull T clusterItem, @NonNull Marker markerItem);
+
+        void onClusterItemDrawn(Map<Cluster<T>, Marker> mMarkers);
     }
 
     /**

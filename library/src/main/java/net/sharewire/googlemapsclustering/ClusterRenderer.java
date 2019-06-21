@@ -140,6 +140,8 @@ class ClusterRenderer<T extends ClusterItem> implements GoogleMap.OnMarkerClickL
             }
             markerToAdd.setTag(clusterToAdd);
 
+            mCallbacks.onClusterItemDrawn(mMarkers);
+
             mMarkers.put(clusterToAdd, markerToAdd);
         }
     }

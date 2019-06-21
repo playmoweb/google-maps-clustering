@@ -18,6 +18,7 @@ import net.sharewire.googlemapsclustering.ClusterManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -56,6 +57,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             public boolean onClusterItemClick(@NonNull SampleClusterItem clusterItem, @NonNull Marker marker) {
                 Log.d(TAG, "onClusterItemClick");
                 return false;
+            }
+
+            @Override
+            public void onClusterItemDrawn(Map<Cluster<SampleClusterItem>, Marker> mMarkers) {
+                Log.d(TAG, "Drawn");
             }
         });
         googleMap.setOnCameraIdleListener(clusterManager);
