@@ -59,7 +59,7 @@ public class ClusterManager<T extends ClusterItem> implements GoogleMap.OnCamera
          * <code>false</code> otherwise (i.e., the default behavior should occur). The default behavior is for the camera
          * to move to the marker and an info window to appear.
          */
-        boolean onClusterClick(@NonNull Cluster<T> cluster, , @NonNull Marker markerItem);
+        boolean onClusterClick(@NonNull Cluster<T> cluster, @NonNull Marker markerItem);
 
         /**
          * Called when a marker representing a cluster item has been clicked.
